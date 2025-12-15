@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from customers.models import Customer
+from products.models import Category
 
 
 class IndexView(View):
@@ -12,4 +13,4 @@ class IndexView(View):
         # context = {
         #     "customer": customer
         # }
-        return render(request, 'ecommerce/index.html', {})
+        return render(request, 'ecommerce/index.html')

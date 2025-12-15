@@ -100,10 +100,9 @@
                                 <li>
                                     <a href="{% url 'product_list' %}" class="sf-with-ul">Shop</a>
                                     <ul>
-                                        <li><a href="{% url 'product_list' %}">Products</a></li>
-                                        <li><a href="{% url 'cart' %}">Cart</a></li>
-                                        <li><a href="{% url 'checkout' %}">Checkout</a></li>
-                                        <li><a href="{% url 'wishlist' %}">Wishlist</a></li>
+                                        {% for menu in main_menu %}
+                                        <li><a href="{% url 'product_list' %}?category={{menu.slug}}">{{menu.name}}</a></li>
+                                        {%endfor%}
                                     </ul>
                                 </li>
                             </ul>
@@ -123,13 +122,13 @@
 
                         <a href="{% url 'wishlist' %}" class="wishlist-link">
                             <i class="icon-heart-o"></i>
-                            <span class="wishlist-count">3</span>
+                            <span class="wishlist-count">{{header_wishlist_count}}</span>
                         </a>
 
                         <div class="dropdown cart-dropdown">
                             <a href="{% url 'cart' %}" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                                 <i class="icon-shopping-cart"></i>
-                                <span class="cart-count">2</span>
+                                <span class="cart-count">{{header_cart_items_count}}</span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right">

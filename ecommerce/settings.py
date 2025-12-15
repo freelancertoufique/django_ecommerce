@@ -76,6 +76,9 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # `allauth` needs this from django
                 'django.template.context_processors.request',
+                'products.context_processor.category_context',
+                'products.context_processor.cart_context',
+                'products.context_processor.wishlist_context'
             ],
         },
     },

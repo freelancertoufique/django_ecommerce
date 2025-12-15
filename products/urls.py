@@ -5,6 +5,7 @@ from products.views import (
     CartView,
     WishlistView,
     CheckoutView,
+    AddToCartView
 )
 
 urlpatterns = [
@@ -17,4 +18,9 @@ urlpatterns = [
     path('cart/', CartView.as_view(), name='cart'),
     path('wishlist/', WishlistView.as_view(), name='wishlist'),
     path('checkout/', CheckoutView.as_view(), name='checkout'),
+    path(
+        'cart/add/<int:product_id>/',
+        AddToCartView.as_view(),
+        name='add_to_cart'
+    ),
 ]
