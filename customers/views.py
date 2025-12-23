@@ -3,7 +3,9 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.views import View
+
 from django.contrib.auth.mixins import LoginRequiredMixin
+
 from .models import Customer, ResetPassword as ResetPassModel
 from django.core.mail import send_mail
 

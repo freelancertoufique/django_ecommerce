@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Payment Failed - Molla{% endblock %}
+
+{% block content %}
+<main class="main">
+    <div class="page-header text-center" style="background-image: url('{% static 'assets/images/page-header-bg.jpg' %}')">
+        <div class="container">
+            <h1 class="page-title">Payment Failed</h1>
+        </div>
+    </div>
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Payment Failed</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content pb-3">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="card border-danger mb-3">
+                        <div class="card-body text-center py-5">
+                            <div class="mb-4">
+                                <i class="icon-close" style="font-size: 80px; color: #dc3545;"></i>
+                            </div>
+                            <h2 class="card-title text-danger mb-3">Payment Failed</h2>
+                            <p class="card-text lead mb-4">
+                                Unfortunately, your payment could not be processed.
+                            </p>
+                            
+                            <div class="alert alert-danger">
+                                <h6 class="mb-2">What happened?</h6>
+                                <p class="mb-0">
+                                    The payment transaction was unsuccessful. This could be due to:
+                                </p>
+                                <ul class="text-left mt-2 mb-0">
+                                    <li>Insufficient funds</li>
+                                    <li>Incorrect card details</li>
+                                    <li>Bank declined the transaction</li>
+                                    <li>Network connectivity issues</li>
+                                </ul>
+                            </div>
+
+                            <p class="text-muted mb-4">
+                                Don't worry, no charges have been made to your account.
+                            </p>
+
+                            <div class="mt-4">
+                                <a href="{% url 'checkout' %}" class="btn btn-outline-primary-2 mr-2">
+                                    <i class="icon-refresh"></i>
+                                    <span>Try Again</span>
+                                </a>
+                                <a href="{% url 'index' %}" class="btn btn-outline-dark">
+                                    <span>Back to Home</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

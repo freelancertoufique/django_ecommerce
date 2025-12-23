@@ -45,3 +45,35 @@ class ResetPassword(models.Model):
             return True
 
         return False
+
+
+class Address(models.Model):
+    customer = models.ForeignKey(
+        Customer,
+        on_delete=models.SET_NULL,
+        related_name='addresses',
+        blank=True,
+        null=True
+    )
+    order = models.ForeignKey(
+        'orders.Order',
+        on_delete=models.SET_NULL,
+        related_name='addresses',
+        blank=True,
+        null=True
+    )
+    full_name = models.CharField(max_length=255, blank=True, null=True)
+    phone = models.CharField(max_length=50, blank=True, null=True)
+    address_line1 = models.CharField(max_length=255)
+    address_line2 = models.CharField(max_length=255, blank=True, null=True)
+    city = models.CharField(max_length=100, blank=True, null=True)
+    state = models.CharField(max_length=100, blank=True, null=True)
+    postal_code = models.CharField(max_length=20, blank=True, null=True)
+    country = models.CharField(max_length=100, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        if self.customer:
+            return f"{self.customer} - {self.address_line1}"
+        return self.address_line1

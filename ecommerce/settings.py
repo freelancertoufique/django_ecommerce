@@ -191,3 +191,14 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 #       ['skdsadhon@gmail.com'],
 #       fail_silently=False,
 #   )
+
+
+# SSLCommerz Payment Gateway Settings
+SSLCOMMERZ_STORE_ID = 'digif693ead796d880'
+SSLCOMMERZ_STORE_PASS = 'digif693ead796d880@ssl'
+SSLCOMMERZ_IS_SANDBOX = True
+
+SSLCOMMERZ_SUCCESS_URL = 'http://localhost:8000/orders/sslcommerz/success/'
+SSLCOMMERZ_FAIL_URL = 'http://localhost:8000/orders/sslcommerz/fail/'
+SSLCOMMERZ_CANCEL_URL = 'http://localhost:8000/orders/sslcommerz/cancel/'
+SSLCOMMERZ_IPN_URL = 'http://localhost:8000/orders/sslcommerz/ipn/'

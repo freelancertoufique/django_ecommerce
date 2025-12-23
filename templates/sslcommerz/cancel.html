@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Payment Canceled - Molla{% endblock %}
+
+{% block content %}
+<main class="main">
+    <div class="page-header text-center" style="background-image: url('{% static 'assets/images/page-header-bg.jpg' %}')">
+        <div class="container">
+            <h1 class="page-title">Payment Canceled</h1>
+        </div>
+    </div>
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Payment Canceled</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content pb-3">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="card border-warning mb-3">
+                        <div class="card-body text-center py-5">
+                            <div class="mb-4">
+                                <i class="icon-exclamation-triangle" style="font-size: 80px; color: #ffc107;"></i>
+                            </div>
+                            <h2 class="card-title text-warning mb-3">Payment Canceled</h2>
+                            <p class="card-text lead mb-4">
+                                You have canceled the payment process.
+                            </p>
+                            
+                            <div class="alert alert-warning">
+                                <p class="mb-0">
+                                    Your order has not been completed. No charges have been made to your account.
+                                </p>
+                            </div>
+
+                            <p class="text-muted mb-4">
+                                If you experienced any issues during checkout, please contact our support team.
+                            </p>
+
+                            <div class="mt-4">
+                                <a href="{% url 'checkout' %}" class="btn btn-outline-primary-2 mr-2">
+                                    <i class="icon-refresh"></i>
+                                    <span>Try Again</span>
+                                </a>
+                                <a href="{% url 'cart' %}" class="btn btn-outline-dark mr-2">
+                                    <span>View Cart</span>
+                                </a>
+                                <a href="{% url 'index' %}" class="btn btn-outline-secondary">
+                                    <span>Continue Shopping</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
